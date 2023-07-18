@@ -5,19 +5,23 @@
 
 	const countBtn = document.getElementById('count-btn');
 
-	const errorMsg = document.getElementById('error');
 	const priceForOne = document.getElementById('cost');
 	const tipInfo = document.getElementById('tip-info');
 
+	const errorMsg = document.getElementById('error');
 	const textInfo = document.querySelector('.text-info');
 	const tipMsg = document.querySelector('.tip-info');
 
 	const countBillAndTip = function () {
 		const wholeTip = (inputPriceToPay.value * inputTipToPay.value).toFixed(2);
 
+		const priceInputNum = +inputPriceToPay.value;
+		const tipInputNum = +inputTipToPay.value;
+		const peopleInputNum = parseInt(inputNumsOfPeople.value);
+
 		const priceForOneSum = (
-			(+inputPriceToPay.value + +inputTipToPay.value * +inputPriceToPay.value) /
-			+inputNumsOfPeople.value
+			(priceInputNum + tipInputNum * priceInputNum) /
+			peopleInputNum
 		).toFixed(2);
 
 		priceForOne.textContent = priceForOneSum;

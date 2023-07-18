@@ -103,6 +103,10 @@ body {
 			display: none;
 			padding: 2px;
 			text-align: center;
+
+			span {
+				font-weight: bold;
+			}
 		}
 		.tip-info {
 			display: none;
